@@ -8,8 +8,8 @@
 *.rar
 .DS_Store
 
-/*/*.settings
-/*/*.classpath
-/*/*.project
-/*/target
-/*/*.class
+**/*.settings
+**/*.classpath
+**/*.project
+**/target
+**/*.class
