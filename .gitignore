@@ -1,6 +1,15 @@
 *.project
-*.classpath
-/.settings
-/target
-/.project
-*.class
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+.DS_Store
+
+/*/*.settings
+/*/*.classpath
+/*/*.project
+/*/target
+/*/*.class
