@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="/Users/yuwentao/configs/maven/repo/mysql/mysql-connector-java/5.1.35/mysql-connector-java-5.1.35.jar"/>
+    <!-- mvn mybatis-generator:generate -->
+    <context id="MySQL" targetRuntime="com.weidai.mybatis.IntrospectedTableMyBatis3ImplExt">
+        <property name="suppressAllComments" value="true"/>
+        <property name="useActualColumnNames" value="false"/>
+        
+        <!-- 生成作者，实际开发时请自行更改  -->
+        <property name="author" value="system"/>
+        
+        <!-- 不需要在mapper.xml中声明 jdbcType -->
+        <property name="suppressColumnType" value="true"/>
+        
+        <!-- 格式化java代码 -->
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+        
+        <!-- 格式化XML代码 -->
+        <property name="xmlFormatter" value="com.weidai.mybatis.dom.formatter.WdXmlFormatter"/>
+        
+        <!-- 配置插件 1.1.0版本之后变为WdMysqlClientGeneratorPlugin-->
+        <!-- <plugin type="com.weidai.mybatis.MysqlPaginationPlugin"/> -->
+        <plugin type="com.weidai.mybatis.WdMysqlClientGeneratorPlugin"/>
+        
+        
+        <commentGenerator type="com.weidai.mybatis.generator.CNCommentGenerator">
+            <property name="suppressDate" value="true" />
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true"/>
+            <!-- 生成作者，实际开发时请自行更改 -->
+        	<property name="author" value="system"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://192.168.20.40:3306/loan" userId="devloan" password="DEVloan123!">
+        </jdbcConnection>
+
+
+        <javaTypeResolver type="com.weidai.mybatis.generator.resolver.WdCoustomJavaTypeResolver">
+    		<property name="forceBigDecimals" value="false"/>
+    		<property name="jdbcType.TINYINT" value="java.lang.Integer"/> 
+		</javaTypeResolver>
+
+        <!-- 配置model生成位置 -->
+        <javaModelGenerator targetPackage="com.ywt.jhamster.entity.model" targetProject="../JHamster-entity/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 配置sqlmap生成位置 -->
+        <sqlMapGenerator targetPackage="com.ywt.jhamster.dal" targetProject="../JHamster-dal/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 配置mapper接口生成位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ywt.jhamster.dal" targetProject="../JHamster-dal/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- <table tableName="fake_order" domainObjectName="FakeOrder"
+               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" type="post" identity="true"/>
+        </table> -->
+
+
+         <table tableName="main_loan_order" domainObjectName="MainLoanOrder"
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+		</table>
+    </context>
+</generatorConfiguration>

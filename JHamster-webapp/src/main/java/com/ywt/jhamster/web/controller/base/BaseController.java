@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping(value="/index")
-@EnableAutoConfiguration
 public class BaseController {
 	
 	@RequestMapping("/hello")
