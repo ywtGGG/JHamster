@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans
+       	http://www.springframework.org/schema/beans/spring-beans.xsd
+    ">
+
+    <!-- <bean id="simpleProducer" class="com.weidai.rocketmq.client.SimpleProducer">
+        <property name="application" value="LOANCENTER" />
+        <property name="topic" value="LOANCENTER_TOPIC" />
+        <property name="nameServerAddress" value="${nameServerAddress}" />
+    </bean> -->
+
+    <bean class="com.ywt.jhamster.common.rocketmq.client.EasyPushConsumer">
+        <property name="application" value="GAME_HYTN_GROUP" />
+        <property name="topic" value="HYTN_TOPIC" />
+        <property name="nameServerAddress" value="${nameServerAddress}" />
+        <property name="messageListener">
+            <bean class="com.ywt.mq.consume.GameRechargeListener" />
+        </property>
+    </bean>
+</beans>

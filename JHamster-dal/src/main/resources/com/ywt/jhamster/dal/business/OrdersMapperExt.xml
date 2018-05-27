@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywt.jhamster.dal.business.OrdersMapperExt">
+<resultMap id="BaseResultMap" type="com.ywt.jhamster.entity.model.business.Orders">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="ref_order_id" property="refOrderId" />
+        <result column="subject" property="subject" />
+        <result column="goods_type" property="goodsType" />
+        <result column="word_server" property="wordServer" />
+        <result column="character_id" property="characterId" />
+        <result column="character_name" property="characterName" />
+        <result column="total_amount" property="totalAmount" />
+        <result column="receipt_amount" property="receiptAmount" />
+        <result column="pay_type" property="payType" />
+        <result column="status" property="status" />
+        <result column="remark" property="remark" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, uid, ref_order_id, subject, goods_type, word_server, character_id, character_name, 
+        total_amount, receipt_amount, pay_type, status, remark, create_time
+    </sql>
+    <!-- 扩展自动生成或自定义的SQl语句写在此文件中 -->
+</mapper>

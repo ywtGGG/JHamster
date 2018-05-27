@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywt.jhamster.dal.rule.RuleMapper">
+    <resultMap id="BaseResultMap" type="com.ywt.jhamster.entity.model.rule.Rule">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="key" property="key" />
+        <result column="triggering" property="triggering" />
+        <result column="award" property="award" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, name, key, triggering, award, create_time
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select 
+        <include refid="Base_Column_List" />
+        from rule
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from rule
+        where id = #{id}
+    </delete>
+    <insert id="insert" parameterType="com.ywt.jhamster.entity.model.rule.Rule">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rule (name, key, triggering, 
+            award, create_time)
+        values (#{name}, #{key}, #{triggering}, 
+            #{award}, #{createTime})
+    </insert>
+    <insert id="insertSelective" parameterType="com.ywt.jhamster.entity.model.rule.Rule">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rule
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                name,
+            </if>
+            <if test="key != null">
+                key,
+            </if>
+            <if test="triggering != null">
+                triggering,
+            </if>
+            <if test="award != null">
+                award,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="key != null">
+                #{key},
+            </if>
+            <if test="triggering != null">
+                #{triggering},
+            </if>
+            <if test="award != null">
+                #{award},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ywt.jhamster.entity.model.rule.Rule">
+        update rule
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="key != null">
+                key = #{key},
+            </if>
+            <if test="triggering != null">
+                triggering = #{triggering},
+            </if>
+            <if test="award != null">
+                award = #{award},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ywt.jhamster.entity.model.rule.Rule">
+        update rule
+        set name = #{name},
+            key = #{key},
+            triggering = #{triggering},
+            award = #{award},
+            create_time = #{createTime}
+        where id = #{id}
+    </update>
+</mapper>

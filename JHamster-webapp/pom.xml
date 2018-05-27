@@ -7,4 +7,12 @@
   </parent>
   <artifactId>JHamster-webapp</artifactId>
   <packaging>war</packaging>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.ywt.JHamster</groupId>
+		<artifactId>JHamster-service</artifactId>
+		<version>1.0.0</version>
+  	</dependency>
+  	</dependencies>
 </project>

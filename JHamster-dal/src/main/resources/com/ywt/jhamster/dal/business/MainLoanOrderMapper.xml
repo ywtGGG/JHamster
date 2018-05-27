@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ccom.ywt.jhamster.dal.business.MainLoanOrderMapper">
+    <resultMap id="BaseResultMap" type="com.ywt.jhamster.entity.model.business.MainLoanOrder">
+        <id column="id" property="id" />
+        <result column="ref_loan_id" property="refLoanId" />
+        <result column="out_order_id" property="outOrderId" />
+        <result column="father_loan_id" property="fatherLoanId" />
+        <result column="order_type" property="orderType" />
+        <result column="product_name" property="productName" />
+        <result column="flow_type" property="flowType" />
+        <result column="loan_type" property="loanType" />
+        <result column="status" property="status" />
+        <result column="order_source" property="orderSource" />
+        <result column="uid" property="uid" />
+        <result column="uid_name" property="uidName" />
+        <result column="support_uid" property="supportUid" />
+        <result column="support_uid_name" property="supportUidName" />
+        <result column="apply_amount" property="applyAmount" />
+        <result column="loan_total_amount" property="loanTotalAmount" />
+        <result column="period" property="period" />
+        <result column="perion_unit" property="perionUnit" />
+        <result column="repay_mode" property="repayMode" />
+        <result column="annual_rate" property="annualRate" />
+        <result column="is_extended" property="isExtended" />
+        <result column="out_status" property="outStatus" />
+        <result column="uid_cus" property="uidCus" />
+        <result column="uid_cusName" property="uidCusname" />
+        <result column="cid" property="cid" />
+        <result column="cid_name" property="cidName" />
+        <result column="sale_id" property="saleId" />
+        <result column="sale_man" property="saleMan" />
+        <result column="team_major_id" property="teamMajorId" />
+        <result column="team_major_name" property="teamMajorName" />
+        <result column="company_id" property="companyId" />
+        <result column="remark" property="remark" />
+        <result column="creator_id" property="creatorId" />
+        <result column="modified_id" property="modifiedId" />
+        <result column="create_time" property="createTime" />
+        <result column="modified_time" property="modifiedTime" />
+        <result column="channel_id" property="channelId" />
+        <result column="child_status" property="childStatus" />
+        <result column="order_flag" property="orderFlag" />
+        <result column="remit_type" property="remitType" />
+        <result column="remit_time" property="remitTime" />
+        <result column="fund_channel" property="fundChannel" />
+        <result column="loan_purpose" property="loanPurpose" />
+        <result column="level" property="level" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, ref_loan_id, out_order_id, father_loan_id, order_type, product_name, flow_type, 
+        loan_type, status, order_source, uid, uid_name, support_uid, support_uid_name, apply_amount, 
+        loan_total_amount, period, perion_unit, repay_mode, annual_rate, is_extended, out_status, 
+        uid_cus, uid_cusName, cid, cid_name, sale_id, sale_man, team_major_id, team_major_name, 
+        company_id, remark, creator_id, modified_id, create_time, modified_time, channel_id, 
+        child_status, order_flag, remit_type, remit_time, fund_channel, loan_purpose, level
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select 
+        <include refid="Base_Column_List" />
+        from main_loan_order
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        delete from main_loan_order
+        where id = #{id}
+    </delete>
+    <insert id="insert" parameterType="com.weidai.loancenter.entity.model.loanorder.MainLoanOrder">
+        insert into main_loan_order (id, ref_loan_id, out_order_id, 
+            father_loan_id, order_type, product_name, 
+            flow_type, loan_type, status, 
+            order_source, uid, uid_name, 
+            support_uid, support_uid_name, apply_amount, 
+            loan_total_amount, period, perion_unit, 
+            repay_mode, annual_rate, is_extended, 
+            out_status, uid_cus, uid_cusName, 
+            cid, cid_name, sale_id, 
+            sale_man, team_major_id, team_major_name, 
+            company_id, remark, creator_id, 
+            modified_id, create_time, modified_time, 
+            channel_id, child_status, order_flag, 
+            remit_type, remit_time, fund_channel, 
+            loan_purpose, level)
+        values (#{id}, #{refLoanId}, #{outOrderId}, 
+            #{fatherLoanId}, #{orderType}, #{productName}, 
+            #{flowType}, #{loanType}, #{status}, 
+            #{orderSource}, #{uid}, #{uidName}, 
+            #{supportUid}, #{supportUidName}, #{applyAmount}, 
+            #{loanTotalAmount}, #{period}, #{perionUnit}, 
+            #{repayMode}, #{annualRate}, #{isExtended}, 
+            #{outStatus}, #{uidCus}, #{uidCusname}, 
+            #{cid}, #{cidName}, #{saleId}, 
+            #{saleMan}, #{teamMajorId}, #{teamMajorName}, 
+            #{companyId}, #{remark}, #{creatorId}, 
+            #{modifiedId}, #{createTime}, #{modifiedTime}, 
+            #{channelId}, #{childStatus}, #{orderFlag}, 
+            #{remitType}, #{remitTime}, #{fundChannel}, 
+            #{loanPurpose}, #{level})
+    </insert>
+    <insert id="insertSelective" parameterType="com.weidai.loancenter.entity.model.loanorder.MainLoanOrder">
+        insert into main_loan_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="refLoanId != null">
+                ref_loan_id,
+            </if>
+            <if test="outOrderId != null">
+                out_order_id,
+            </if>
+            <if test="fatherLoanId != null">
+                father_loan_id,
+            </if>
+            <if test="orderType != null">
+                order_type,
+            </if>
+            <if test="productName != null">
+                product_name,
+            </if>
+            <if test="flowType != null">
+                flow_type,
+            </if>
+            <if test="loanType != null">
+                loan_type,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="orderSource != null">
+                order_source,
+            </if>
+            <if test="uid != null">
+                uid,
+            </if>
+            <if test="uidName != null">
+                uid_name,
+            </if>
+            <if test="supportUid != null">
+                support_uid,
+            </if>
+            <if test="supportUidName != null">
+                support_uid_name,
+            </if>
+            <if test="applyAmount != null">
+                apply_amount,
+            </if>
+            <if test="loanTotalAmount != null">
+                loan_total_amount,
+            </if>
+            <if test="period != null">
+                period,
+            </if>
+            <if test="perionUnit != null">
+                perion_unit,
+            </if>
+            <if test="repayMode != null">
+                repay_mode,
+            </if>
+            <if test="annualRate != null">
+                annual_rate,
+            </if>
+            <if test="isExtended != null">
+                is_extended,
+            </if>
+            <if test="outStatus != null">
+                out_status,
+            </if>
+            <if test="uidCus != null">
+                uid_cus,
+            </if>
+            <if test="uidCusname != null">
+                uid_cusName,
+            </if>
+            <if test="cid != null">
+                cid,
+            </if>
+            <if test="cidName != null">
+                cid_name,
+            </if>
+            <if test="saleId != null">
+                sale_id,
+            </if>
+            <if test="saleMan != null">
+                sale_man,
+            </if>
+            <if test="teamMajorId != null">
+                team_major_id,
+            </if>
+            <if test="teamMajorName != null">
+                team_major_name,
+            </if>
+            <if test="companyId != null">
+                company_id,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="creatorId != null">
+                creator_id,
+            </if>
+            <if test="modifiedId != null">
+                modified_id,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="modifiedTime != null">
+                modified_time,
+            </if>
+            <if test="channelId != null">
+                channel_id,
+            </if>
+            <if test="childStatus != null">
+                child_status,
+            </if>
+            <if test="orderFlag != null">
+                order_flag,
+            </if>
+            <if test="remitType != null">
+                remit_type,
+            </if>
+            <if test="remitTime != null">
+                remit_time,
+            </if>
+            <if test="fundChannel != null">
+                fund_channel,
+            </if>
+            <if test="loanPurpose != null">
+                loan_purpose,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="refLoanId != null">
+                #{refLoanId},
+            </if>
+            <if test="outOrderId != null">
+                #{outOrderId},
+            </if>
+            <if test="fatherLoanId != null">
+                #{fatherLoanId},
+            </if>
+            <if test="orderType != null">
+                #{orderType},
+            </if>
+            <if test="productName != null">
+                #{productName},
+            </if>
+            <if test="flowType != null">
+                #{flowType},
+            </if>
+            <if test="loanType != null">
+                #{loanType},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="orderSource != null">
+                #{orderSource},
+            </if>
+            <if test="uid != null">
+                #{uid},
+            </if>
+            <if test="uidName != null">
+                #{uidName},
+            </if>
+            <if test="supportUid != null">
+                #{supportUid},
+            </if>
+            <if test="supportUidName != null">
+                #{supportUidName},
+            </if>
+            <if test="applyAmount != null">
+                #{applyAmount},
+            </if>
+            <if test="loanTotalAmount != null">
+                #{loanTotalAmount},
+            </if>
+            <if test="period != null">
+                #{period},
+            </if>
+            <if test="perionUnit != null">
+                #{perionUnit},
+            </if>
+            <if test="repayMode != null">
+                #{repayMode},
+            </if>
+            <if test="annualRate != null">
+                #{annualRate},
+            </if>
+            <if test="isExtended != null">
+                #{isExtended},
+            </if>
+            <if test="outStatus != null">
+                #{outStatus},
+            </if>
+            <if test="uidCus != null">
+                #{uidCus},
+            </if>
+            <if test="uidCusname != null">
+                #{uidCusname},
+            </if>
+            <if test="cid != null">
+                #{cid},
+            </if>
+            <if test="cidName != null">
+                #{cidName},
+            </if>
+            <if test="saleId != null">
+                #{saleId},
+            </if>
+            <if test="saleMan != null">
+                #{saleMan},
+            </if>
+            <if test="teamMajorId != null">
+                #{teamMajorId},
+            </if>
+            <if test="teamMajorName != null">
+                #{teamMajorName},
+            </if>
+            <if test="companyId != null">
+                #{companyId},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+            <if test="creatorId != null">
+                #{creatorId},
+            </if>
+            <if test="modifiedId != null">
+                #{modifiedId},
+            </if>
+            <if test="createTime != null">
+                #{createTime},
+            </if>
+            <if test="modifiedTime != null">
+                #{modifiedTime},
+            </if>
+            <if test="channelId != null">
+                #{channelId},
+            </if>
+            <if test="childStatus != null">
+                #{childStatus},
+            </if>
+            <if test="orderFlag != null">
+                #{orderFlag},
+            </if>
+            <if test="remitType != null">
+                #{remitType},
+            </if>
+            <if test="remitTime != null">
+                #{remitTime},
+            </if>
+            <if test="fundChannel != null">
+                #{fundChannel},
+            </if>
+            <if test="loanPurpose != null">
+                #{loanPurpose},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.weidai.loancenter.entity.model.loanorder.MainLoanOrder">
+        update main_loan_order
+        <set>
+            <if test="refLoanId != null">
+                ref_loan_id = #{refLoanId},
+            </if>
+            <if test="outOrderId != null">
+                out_order_id = #{outOrderId},
+            </if>
+            <if test="fatherLoanId != null">
+                father_loan_id = #{fatherLoanId},
+            </if>
+            <if test="orderType != null">
+                order_type = #{orderType},
+            </if>
+            <if test="productName != null">
+                product_name = #{productName},
+            </if>
+            <if test="flowType != null">
+                flow_type = #{flowType},
+            </if>
+            <if test="loanType != null">
+                loan_type = #{loanType},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="orderSource != null">
+                order_source = #{orderSource},
+            </if>
+            <if test="uid != null">
+                uid = #{uid},
+            </if>
+            <if test="uidName != null">
+                uid_name = #{uidName},
+            </if>
+            <if test="supportUid != null">
+                support_uid = #{supportUid},
+            </if>
+            <if test="supportUidName != null">
+                support_uid_name = #{supportUidName},
+            </if>
+            <if test="applyAmount != null">
+                apply_amount = #{applyAmount},
+            </if>
+            <if test="loanTotalAmount != null">
+                loan_total_amount = #{loanTotalAmount},
+            </if>
+            <if test="period != null">
+                period = #{period},
+            </if>
+            <if test="perionUnit != null">
+                perion_unit = #{perionUnit},
+            </if>
+            <if test="repayMode != null">
+                repay_mode = #{repayMode},
+            </if>
+            <if test="annualRate != null">
+                annual_rate = #{annualRate},
+            </if>
+            <if test="isExtended != null">
+                is_extended = #{isExtended},
+            </if>
+            <if test="outStatus != null">
+                out_status = #{outStatus},
+            </if>
+            <if test="uidCus != null">
+                uid_cus = #{uidCus},
+            </if>
+            <if test="uidCusname != null">
+                uid_cusName = #{uidCusname},
+            </if>
+            <if test="cid != null">
+                cid = #{cid},
+            </if>
+            <if test="cidName != null">
+                cid_name = #{cidName},
+            </if>
+            <if test="saleId != null">
+                sale_id = #{saleId},
+            </if>
+            <if test="saleMan != null">
+                sale_man = #{saleMan},
+            </if>
+            <if test="teamMajorId != null">
+                team_major_id = #{teamMajorId},
+            </if>
+            <if test="teamMajorName != null">
+                team_major_name = #{teamMajorName},
+            </if>
+            <if test="companyId != null">
+                company_id = #{companyId},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="creatorId != null">
+                creator_id = #{creatorId},
+            </if>
+            <if test="modifiedId != null">
+                modified_id = #{modifiedId},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="modifiedTime != null">
+                modified_time = #{modifiedTime},
+            </if>
+            <if test="channelId != null">
+                channel_id = #{channelId},
+            </if>
+            <if test="childStatus != null">
+                child_status = #{childStatus},
+            </if>
+            <if test="orderFlag != null">
+                order_flag = #{orderFlag},
+            </if>
+            <if test="remitType != null">
+                remit_type = #{remitType},
+            </if>
+            <if test="remitTime != null">
+                remit_time = #{remitTime},
+            </if>
+            <if test="fundChannel != null">
+                fund_channel = #{fundChannel},
+            </if>
+            <if test="loanPurpose != null">
+                loan_purpose = #{loanPurpose},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.weidai.loancenter.entity.model.loanorder.MainLoanOrder">
+        update main_loan_order
+        set ref_loan_id = #{refLoanId},
+            out_order_id = #{outOrderId},
+            father_loan_id = #{fatherLoanId},
+            order_type = #{orderType},
+            product_name = #{productName},
+            flow_type = #{flowType},
+            loan_type = #{loanType},
+            status = #{status},
+            order_source = #{orderSource},
+            uid = #{uid},
+            uid_name = #{uidName},
+            support_uid = #{supportUid},
+            support_uid_name = #{supportUidName},
+            apply_amount = #{applyAmount},
+            loan_total_amount = #{loanTotalAmount},
+            period = #{period},
+            perion_unit = #{perionUnit},
+            repay_mode = #{repayMode},
+            annual_rate = #{annualRate},
+            is_extended = #{isExtended},
+            out_status = #{outStatus},
+            uid_cus = #{uidCus},
+            uid_cusName = #{uidCusname},
+            cid = #{cid},
+            cid_name = #{cidName},
+            sale_id = #{saleId},
+            sale_man = #{saleMan},
+            team_major_id = #{teamMajorId},
+            team_major_name = #{teamMajorName},
+            company_id = #{companyId},
+            remark = #{remark},
+            creator_id = #{creatorId},
+            modified_id = #{modifiedId},
+            create_time = #{createTime},
+            modified_time = #{modifiedTime},
+            channel_id = #{channelId},
+            child_status = #{childStatus},
+            order_flag = #{orderFlag},
+            remit_type = #{remitType},
+            remit_time = #{remitTime},
+            fund_channel = #{fundChannel},
+            loan_purpose = #{loanPurpose},
+            level = #{level}
+        where id = #{id}
+    </update>
+</mapper>

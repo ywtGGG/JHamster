@@ -1,0 +1,32 @@
+2017-11-20 22:41:43.462 [main] DEBUG com.ywt.jhamster.web.Start - Running with Spring Boot v1.4.2.RELEASE, Spring v4.3.4.RELEASE
+2017-11-20 22:41:49.547 [main] DEBUG com.ywt.jhamster.common.utils.SpringContextHolder - 注入ApplicationContext到SpringContextHolder:org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1f0a1d59: startup date [Mon Nov 20 22:41:43 CST 2017]; root of context hierarchy
+2017-11-20 22:42:09.699 [main] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+2017-11-20 22:42:09.708 [main] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 8
+2017-11-20 22:42:09.722 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+2017-11-20 22:42:09.723 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+2017-11-20 22:42:09.723 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+2017-11-20 22:42:09.723 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: true
+2017-11-20 22:42:09.725 [main] DEBUG io.netty.util.internal.PlatformDependent - Java version: 7
+2017-11-20 22:42:09.725 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noUnsafe: false
+2017-11-20 22:42:09.725 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+2017-11-20 22:42:09.725 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noJavassist: false
+2017-11-20 22:42:09.727 [main] DEBUG io.netty.util.internal.PlatformDependent - Javassist: unavailable
+2017-11-20 22:42:09.727 [main] DEBUG io.netty.util.internal.PlatformDependent - You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+2017-11-20 22:42:09.727 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/85/vd_f2kmj7s59_gb06nfkh0_80000gn/T (java.io.tmpdir)
+2017-11-20 22:42:09.727 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+2017-11-20 22:42:09.727 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+2017-11-20 22:42:09.765 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+2017-11-20 22:42:09.765 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+2017-11-20 22:42:09.975 [MQClientFactoryScheduledThread] DEBUG io.netty.util.internal.ThreadLocalRandom - -Dio.netty.initialSeedUniquifier: 0x5e76a016a6108c35 (took 26 ms)
+2017-11-20 22:42:10.070 [MQClientFactoryScheduledThread] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.allocator.type: unpooled
+2017-11-20 22:42:10.070 [MQClientFactoryScheduledThread] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.threadLocalDirectBufferSize: 65536
+2017-11-20 22:42:10.071 [MQClientFactoryScheduledThread] DEBUG io.netty.buffer.ByteBufUtil - -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2017-11-20 22:42:10.204 [MQClientFactoryScheduledThread] DEBUG io.netty.util.Recycler - -Dio.netty.recycler.maxCapacity.default: 262144
+2017-11-20 22:42:10.219 [NettyClientWorkerThread_1] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.bytebuf.checkAccessible: true
+2017-11-20 22:42:10.224 [NettyClientWorkerThread_1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+2017-11-20 22:42:10.224 [NettyClientWorkerThread_1] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.maxRecords: 4
+2017-11-20 22:42:10.400 [NettyClientSelector_1] DEBUG io.netty.util.internal.Cleaner0 - java.nio.ByteBuffer.cleaner(): available
+2017-11-20 22:42:12.352 [main] DEBUG com.ywt.jhamster.dal.system.SystemConfigMapperExt.queryAllConfigs - ==>  Preparing: select * from system_config; 
+2017-11-20 22:42:12.405 [main] DEBUG com.ywt.jhamster.dal.system.SystemConfigMapperExt.queryAllConfigs - ==> Parameters: 
+2017-11-20 22:42:12.470 [main] DEBUG com.ywt.jhamster.dal.system.SystemConfigMapperExt.queryAllConfigs - <==      Total: 14
+2017-11-20 22:42:12.472 [main] DEBUG com.alibaba.druid.pool.PreparedStatementPool - {conn-10001, pstmt-20000} enter cache

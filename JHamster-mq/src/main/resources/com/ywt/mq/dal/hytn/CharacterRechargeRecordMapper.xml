@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywt.mq.game.dal.hytn.CharacterRechargeRecordMapper">
+    <resultMap id="BaseResultMap" type="com.ywt.mq.entity.CharacterRechargeRecord">
+        <id column="character_id" property="characterId" />
+        <result column="character_name" property="characterName" />
+        <result column="recharge_money" property="rechargeMoney" />
+        <result column="gain_dj" property="gainDj" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        character_id, character_name, recharge_money, gain_dj
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select 
+        <include refid="Base_Column_List" />
+        from character_recharge_record
+        where character_id = #{characterId}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from character_recharge_record
+        where character_id = #{characterId}
+    </delete>
+    <insert id="insert" parameterType="com.ywt.mq.entity.CharacterRechargeRecord">
+        insert into character_recharge_record (character_id, character_name, recharge_money, 
+            gain_dj)
+        values (#{characterId}, #{characterName}, #{rechargeMoney}, 
+            #{gainDj})
+    </insert>
+    <insert id="insertSelective" parameterType="com.ywt.mq.entity.CharacterRechargeRecord">
+        insert into character_recharge_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="characterId != null">
+                character_id,
+            </if>
+            <if test="characterName != null">
+                character_name,
+            </if>
+            <if test="rechargeMoney != null">
+                recharge_money,
+            </if>
+            <if test="gainDj != null">
+                gain_dj,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="characterId != null">
+                #{characterId},
+            </if>
+            <if test="characterName != null">
+                #{characterName},
+            </if>
+            <if test="rechargeMoney != null">
+                #{rechargeMoney},
+            </if>
+            <if test="gainDj != null">
+                #{gainDj},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ywt.mq.entity.CharacterRechargeRecord">
+        update character_recharge_record
+        <set>
+            <if test="characterName != null">
+                character_name = #{characterName},
+            </if>
+            <if test="rechargeMoney != null">
+                recharge_money = #{rechargeMoney},
+            </if>
+            <if test="gainDj != null">
+                gain_dj = #{gainDj},
+            </if>
+        </set>
+        where character_id = #{characterId}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ywt.mq.entity.CharacterRechargeRecord">
+        update character_recharge_record
+        set character_name = #{characterName},
+            recharge_money = #{rechargeMoney},
+            gain_dj = #{gainDj}
+        where character_id = #{characterId}
+    </update>
+</mapper>

@@ -6,4 +6,22 @@
     <version>1.0.0</version>
   </parent>
   <artifactId>JHamster-service</artifactId>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.ywt.JHamster</groupId>
+    	<artifactId>JHamster-common</artifactId>
+    	<version>1.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.ywt.JHamster</groupId>
+    	<artifactId>JHamster-entity</artifactId>
+    	<version>1.0.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.ywt.JHamster</groupId>
+    	<artifactId>JHamster-dal</artifactId>
+    	<version>1.0.0</version>
+  	</dependency>
+  </dependencies>
 </project>

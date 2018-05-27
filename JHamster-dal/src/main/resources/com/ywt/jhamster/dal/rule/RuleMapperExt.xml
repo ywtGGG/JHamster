@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ywt.jhamster.dal.rule.RuleMapperExt">
+	<resultMap id="BaseResultMap" type="com.ywt.jhamster.entity.model.rule.Rule">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="key" property="key" />
+        <result column="triggering" property="triggering" />
+        <result column="award" property="award" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, name, key, triggering, award, create_time
+    </sql>
+    <!-- 扩展自动生成或自定义的SQl语句写在此文件中 -->
+    
+    <select id="queryRulesByKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select 
+        <include refid="Base_Column_List" />
+        from rule
+        where key = #{key}
+        order by triggering desc
+    </select>
+</mapper>
