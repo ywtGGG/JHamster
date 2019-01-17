@@ -35,7 +35,7 @@
         	<property name="author" value="system"/>
         </commentGenerator>
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-            connectionURL="jdbc:mysql://118.89.139.148/mxd_order" userId="root" password="wentao520">
+            connectionURL="jdbc:mysql://*/*" userId="root" password="*">
         </jdbcConnection>
 
 
